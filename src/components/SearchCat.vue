@@ -61,8 +61,6 @@ export default {
   height: 60px;
   position: relative;
   border-radius: 24px;
-  margin-top: 340px;
-  margin-left: 100px;
 }
 
 form {

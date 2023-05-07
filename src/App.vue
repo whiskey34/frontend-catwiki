@@ -75,6 +75,11 @@ nav {
   justify-content: space-between;
 }
 
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .logo {
   margin-top: 10px;
   margin-left: 96px;

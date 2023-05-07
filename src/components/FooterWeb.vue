@@ -31,7 +31,7 @@ export default {
 }
 
 .footer-web {
-    position: absolute;
+    /* position: absolute; */
     background: #000000;
     width: 1148px;
     height: 72.09px;

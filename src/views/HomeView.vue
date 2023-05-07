@@ -1,44 +1,42 @@
 <template>
 <div class="content">
-    <div class="box-1">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="brand-name">
-                    <p>CatWiki</p>
-                </div>
+    <div class="box-container">
+        <div class="box-1">
+            <div class="brand-name">
+                <p>CatWiki</p>
                 <img :src="require('@/assets/images/catwiki-logo-1.png')" alt="cat logo" class="brand-cat">
-                <div class="text-promo">
-                    <p>Get to know more about your cat breed</p>
-                </div>
-                <div class="search-place">
-                    <SearchCat @search="searchHandler" />
-                </div>
             </div>
-        </div>
-    </div>
-
-    <div class="box-2">
-        
-
-        <div class="text-most-searched">
-            <p>Most Searched Breeds</p>
-            <hr class="most-line">
+            <div class="text-promo">
+                <p>Get to know more about your cat breed</p>
+            </div>
+            <div class="search-place">
+                <SearchCat @search="searchHandler" />
+            </div>
         </div>
     
+        <div class="box-2">
             
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-start second-title">
-                    <p>66+ Breeds For you to discover</p>
-                </div>
-                <div class="col-md-4 text-end see-more">
-                    <a href="" class="small-text">SEE MORE <i class=" fas fa-light fa-arrow-right-long" style="color: #291507;"></i></a>
+    
+            <div class="text-most-searched">
+                <p>Most Searched Breeds</p>
+                <hr class="most-line">
+            </div>
+        
+                
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-start second-title">
+                        <p>66+ Breeds For you to discover</p>
+                    </div>
+                    <div class="col-md-4 text-end see-more">
+                        <a href="" class="small-text">SEE MORE <i class=" fas fa-light fa-arrow-right-long" style="color: #291507;"></i></a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- calling most searched cats breed api from backend -->
+            <MostPopular/>
         </div>
-        
-        <!-- calling most searched cats breed api from backend -->
-        <MostPopular/>
     </div>
 
     <div class="lower-content">
@@ -102,7 +100,9 @@ export default {
     --white: #fff;
 }
 
-
+.box-container {
+    position: relative;
+}
 
 .content {
     background-color: var(--white);
@@ -113,26 +113,22 @@ export default {
 /* for box-1 */
 
 .box-1 {
-    position: absolute;
     width: 1160px;
     height: 538.19px;
-    left: 96px;
-    top: 99px;
+    padding: 104px;
     background: #C4C4C4;
     border-radius: 42px 42px 0px 0px;
 
     background-image: url('~@/assets/images/HeroImagemd.png');
-    /* background-repeat: no-repeat; */
-    background-size: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .brand-name {
-    position: absolute;
-    width: 207px;
-    height: 87px;
-    left: 104px;
-    top: 110.55px;
+    display: flex;
+    gap: 30px;
 
+    margin-bottom: 20px;    
     font-family: 'Mystery Quest';
     font-style: normal;
     font-weight: 400;
@@ -142,23 +138,16 @@ export default {
     color: #FFFFFF;
 }
 
+.brand-name p {
+    margin: 0;
+}
+
 .brand-cat {
-    position: absolute;
     width: 97px;
     height: 77px;
-    left: 28.73%;
-    right: 58.65%;
-    top: 18.36%;
-    bottom: 86.48%;
 }
 
 .text-promo {
-    position: absolute;
-    width: 371.3px;
-    height: 58px;
-    left: 104px;
-    top: 212.75px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -168,10 +157,10 @@ export default {
     color: #FFFFFF;
 }
 
-/* for box-2 */
 
+/* for box-2 */
 .box-2 {
-    position: absolute;
+    /* position: absolute; */
     width: 1160px;
     height: 686.4px;
     left: 96px;
@@ -183,11 +172,8 @@ export default {
 }
 
 .text-most-searched {
-    position: absolute;
     width: 205px;
     height: 22px;
-    /* left: 98px; */
-    top: 32.21px;
     margin-top: 30px;
 
     font-family: 'Montserrat';
@@ -234,8 +220,8 @@ export default {
 }
 
 .lower-content {
-    margin-top: 1350px;
-    margin-left: 120px;
+    /* margin-top: 1350px;
+    margin-left: 120px; */
 }
 
 .most-line {
@@ -243,6 +229,10 @@ export default {
     border-top: 2px solid #4D270C;
     margin: 10px 0;
     width: 50px;
+}
+
+.search-place {
+    width: auto;
 }
 
 /* mobile styles */
