@@ -19,22 +19,25 @@
       <!-- router to home view, etc etc .... -->
       <router-view/>
 
+      <FooterWeb/>
+
     </div>
 
 </template>
 
-<!-- <script>
-import HelloWorld from './components/HelloWorld.vue'
-import HomeView from './components/HomeView.vue';
+<script>
+// import HelloWorld from './components/HelloWorld.vue'
+// import HomeView from './components/HomeView.vue';
+import FooterWeb from '@/components/FooterWeb.vue';
 
 
 export default {
   name: 'App',
   components: {
-    HomeView
+    FooterWeb,
   }
 }
-</script> -->
+</script>
 
 <style scoped>
 /*=== used fonts ===*/

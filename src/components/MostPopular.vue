@@ -8,7 +8,7 @@
         </ul> -->
 
         <div v-if="loading">
-            <p>Loading spinner goes here...</p>
+            <p>Loading</p>
         </div>
         
         <!-- <div class="" v-else v-for="breed in mostBreed" :key="breed.id">
@@ -108,11 +108,15 @@ export default {
 } */
 .card {
     position: relative;
-    border-radius: 15px;
+    border-radius: 24px;
+    width: 220px;
+    height: 220px;
 }
 
 img {
-    border-radius: 15px;
+    border-radius: 24px;
+    width: 220px;
+    height: 220px;
 }
 
 .card:hover {
@@ -120,7 +124,7 @@ img {
 }
 
 .card-img-top {
-  height: 230px;
+  height: 220px;
   object-fit: cover;
 }
 
@@ -148,10 +152,9 @@ img {
   }
 }
 
-
 .row {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-top: 20px;
+  /* margin-left: 25px;
+  margin-right: 15px; */
+  margin-top: 10px;
 }
 </style>

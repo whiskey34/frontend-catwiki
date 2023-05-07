@@ -8,11 +8,18 @@ module.exports = defineConfig({
 module.exports = {
   devServer: {
     proxy: {
-      '/api': {
+      '/breed': {
         target: 'https://localhost:5000',
         changeOrigin: true,
         pathRewrite: {
-          '^/api': ''
+          '^/breed': ''
+        }
+      },
+      '/catapi': {
+        target: 'https://api.thecatapi.com/v1',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/catapi': ''
         }
       }
     }

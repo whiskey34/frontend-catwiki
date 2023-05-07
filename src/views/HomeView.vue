@@ -11,36 +11,31 @@
                     <p>Get to know more about your cat breed</p>
                 </div>
                 <div class="search-place">
-                    <SearchCat @search="handleSearch"/>
+                    <SearchCat @search="searchHandler" />
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- <h2>cat-breeds of catwiki devch</h2> -->
 
     <div class="box-2">
         
 
         <div class="text-most-searched">
             <p>Most Searched Breeds</p>
+            <hr class="most-line">
         </div>
     
             
         <div class="container">
             <div class="row">
-
                 <div class="col-md-4 text-start second-title">
                     <p>66+ Breeds For you to discover</p>
                 </div>
                 <div class="col-md-4 text-end see-more">
-                    <a href="" class="small-text">SEE MORE <i class="fa-light fa-arrow-right-long" style="color: #291507;"></i></a>
+                    <a href="" class="small-text">SEE MORE <i class=" fas fa-light fa-arrow-right-long" style="color: #291507;"></i></a>
                 </div>
             </div>
         </div>
-        
-       
-
         
         <!-- calling most searched cats breed api from backend -->
         <MostPopular/>
@@ -50,6 +45,7 @@
         <FactCat/>
     </div>
 
+    
 </div>
 </template>
 
@@ -58,9 +54,14 @@ import SearchCat from '@/components/SearchCat.vue';
 import MostPopular from '@/components/MostPopular.vue';
 import FactCat from '@/components/FactCat.vue';
 
-import axios from "axios";
+
+
+// import axios from "axios";
+
+
 
 export default {
+    
     name: 'HomeView',
     props: {
         msg: String
@@ -70,18 +71,22 @@ export default {
         SearchCat,
         MostPopular,
         FactCat,
+        
     },
 
     // get data and emit to searchCat component:
     methods: {
-        async handleSearch(query) {
-        const response = await axios.get(`/api/search?q=${query}`);
-        this.searchResults = response.data;
+        
+        searchHandler(query) {
+            console.log('Query:', query);
+            const encodedQuery = encodeURIComponent(query);
+            console.log('Encoded query:', encodedQuery);
+            // this.$router.push(`/search?breed=${encodedQuery}`);
+            this.$router.push({ name: 'search', query: { breed: query } })
+        },  
     },
-},
-
-
 }
+
 </script>
 
 <style scoped>
@@ -101,9 +106,8 @@ export default {
 
 .content {
     background-color: var(--white);
-    margin: 30px 96px;
-    display: block;
-    
+    margin: 30px auto;
+    width: 1160px;
 }
 
 /* for box-1 */
@@ -172,6 +176,7 @@ export default {
     height: 686.4px;
     left: 96px;
     top: 584.97px;
+    padding: 107px;
 
     background: #E3E1DC;
     border-radius: 0px 0px 42px 42px;
@@ -181,7 +186,7 @@ export default {
     position: absolute;
     width: 205px;
     height: 22px;
-    left: 98px;
+    /* left: 98px; */
     top: 32.21px;
     margin-top: 30px;
 
@@ -200,10 +205,8 @@ export default {
     /* position: absolute; */
     width: 536.93px;
     height: 118px;
-    margin-left: 75px;
-    /* top: 97.21px; */
-    margin-top: 110px;
-    margin-bottom: 0;
+    /* margin-left: 75px; */
+    margin-top: 50px;
 
     font-family: 'Montserrat';
     font-weight: bold;
@@ -219,7 +222,7 @@ export default {
     font-size: 16px;
     /* color: #979797; */
     margin-top: 190px;
-    margin-bottom: 0;
+    
 }
 
 .small-text {
@@ -231,8 +234,18 @@ export default {
 }
 
 .lower-content {
-    margin-top: 1450px;
+    margin-top: 1350px;
     margin-left: 120px;
 }
+
+.most-line {
+    border: none;
+    border-top: 2px solid #4D270C;
+    margin: 10px 0;
+    width: 50px;
+}
+
+/* mobile styles */
+
 </style>
 
