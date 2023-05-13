@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue';
 import SearchResult from '@/components/SearchResult.vue';
+import TopCat from '@/components/TopCat.vue';
 
 const routes = [
     {
@@ -14,6 +15,12 @@ const routes = [
         name: "search",
         component: SearchResult
         // props: (route) => ({ breedName: route.query.breedName }),
+    },
+
+    {
+        path: "/topcat",
+        name: "topcat",
+        component: TopCat
     },
 ]
 

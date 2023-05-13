@@ -31,8 +31,11 @@
                 <div class="col-md-4 text-start second-title">
                     <p>66+ Breeds For you to discover</p>
                 </div>
-                <div class="col-md-4 text-end see-more">
+                <!-- <div class="col-md-4 text-end see-more">
                     <a href="" class="small-text">SEE MORE <i class=" fas fa-light fa-arrow-right-long" style="color: #291507;"></i></a>
+                </div> -->
+                <div class="col-md-4 text-end see-more">
+                    <router-link to="/topcat" class="small-text">SEE MORE <i class=" fas fa-light fa-arrow-right-long" style="color: #291507;"></i></router-link>
                 </div>
             </div>
         </div>

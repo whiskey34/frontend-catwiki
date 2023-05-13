@@ -13,7 +13,10 @@
     <div class="app" id="app">
       <nav>
         <div class="logo">
-          <img :src="require('@/assets/images/CatwikiLogo.svg')" alt="Logo-Catwiki">
+          <router-link to="/" >
+            <img :src="require('@/assets/images/CatwikiLogo.svg')" alt="Logo-Catwiki">
+          </router-link>
+          
         </div>
       </nav>
       <!-- router to home view, etc etc .... -->

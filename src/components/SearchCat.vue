@@ -1,29 +1,23 @@
 <template>
-    <!-- <div class="search-box">
-        <form action="" role="search">
-            <input type="search" class="form-control search-form" name="searchbar" placeholder="Enter your breed" v-model="query" @keyup.enter="search">
-            <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-    </div> -->
-
-  <!-- <div>
-    <input type="text" placeholder="Search cat breed" v-model="searchQuery" />
-    <button @click="search">Search</button>
-  </div> -->
-
+  
   <form @submit.prevent="submitForm" class="search-box">
     <input type="text" class="form-control search-form" v-model="searchQuery" placeholder="Enter breed name" />
     <!-- <button type="submit" class="search-btn">Search</button> -->
-    <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <!-- <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+    <button type="submit" class="search-btn" v-if="searchQuery.length > 1"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button type="submit" class="search-btn" disabled v-else><i class="fa-solid fa-magnifying-glass"></i></button>
+
   </form>
+
 
    
 </template>
 
 
 <script>
-// import axios from 'axios'
 import '@fortawesome/fontawesome-free/css/all.css'
+
+
 
 
 export default {
@@ -33,19 +27,27 @@ export default {
     },
 
 
-  data() {
-    return {
-      searchQuery: '',
-    };
-  },
+    data() {
+      return {
+        searchQuery: '',
+         
+        
+      };
+    },
+
+    
 
   methods: {
-
     submitForm() {
       this.$emit('search', this.searchQuery);
     },
 
+   
+    
+
   },
+
+  
 
   
     
